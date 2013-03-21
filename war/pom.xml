@@ -33,9 +33,9 @@
       <version>${spring.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.talend.cxf-examples.jaxrs-intro-example</groupId>
-      <artifactId>jaxrs-intro-service-bundle</artifactId>
-      <version>1.0</version>
+      <groupId>org.example.chronicle</groupId>
+      <artifactId>chronicle-service</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 

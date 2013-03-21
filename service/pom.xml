@@ -59,7 +59,7 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Require-Bundle>org.apache.cxf.bundle,org.springframework.beans,chronicle-api</Require-Bundle>
-            <Export-Package>oauth</Export-Package>
+            <Export-Package>org.example.chronicle.server,org.example.chronicle.service</Export-Package>
           </instructions>
         </configuration>
       </plugin>
