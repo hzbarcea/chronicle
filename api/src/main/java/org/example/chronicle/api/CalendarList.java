@@ -20,11 +20,11 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-@Path("/users/me/calendarList")
+@Path("/")
 public interface CalendarList {
 
     @DELETE 
-    @Path("/calendars/{id}")
+    @Path("/{id}")
     void delete(@PathParam("id") Long id);
 
 }

@@ -25,7 +25,7 @@ import org.example.chronicle.model.FreeBusyRequest;
 
 
 
-@Path("/freeBusy")
+@Path("/")
 public interface FreeBusy {
 
     @POST

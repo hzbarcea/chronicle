@@ -1,10 +1,9 @@
-# Mac
+*~
+*.swp
 .DS_Store
 
-# Maven
-target
-
 # IDEs
+target
 .metadata
 .checkstyle
 .classpath
