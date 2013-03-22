@@ -27,13 +27,13 @@
 
   <import resource="classpath:META-INF/cxf/cxf.xml" />
 
-  <!-- jaxrs:server id="calendaListService" address="/calendars">
+  <jaxrs:server id="calendarsService" address="/calendars">
     <jaxrs:serviceBeans>
-      <ref bean="calendarListBean" />
+      <ref bean="calendarsBean" />
     </jaxrs:serviceBeans>
   </jaxrs:server>
 
-  <bean id="calendarListBean" class="org.example.chronicle.service.CalendarListService" / -->
+  <bean id="calendarsBean" class="org.example.chronicle.service.CalendarsService" />
 
 </beans>
 

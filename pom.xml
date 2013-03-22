@@ -36,27 +36,39 @@
     <spring.version>3.0.7.RELEASE</spring.version>
 
     <maven-bundle.version>2.1.0</maven-bundle.version>
-    <maven-exec.version>1.2</maven-exec.version>
     <maven-eclipse.version>2.9</maven-eclipse.version>
+    <maven-exec.version>1.2</maven-exec.version>
+    <maven-jetty.version>6.1.15</maven-jetty.version>
+    <maven-tomcat.version>1.0-beta-1</maven-tomcat.version>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-rs-security-oauth2</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-  </dependencies>
+  <repositories>
+    <repository>
+      <id>google-api-services</id>
+      <url>http://google-api-client-libraries.appspot.com/mavenrepo</url>
+    </repository>
+  </repositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+        <version>${cxf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-rs-security-oauth2</artifactId>
+        <version>${cxf.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <modules>
     <module>api</module>
     <module>service</module>
     <module>war</module>
+    <!-- module>test</module -->
   </modules>
 
   <build>
@@ -73,6 +85,12 @@
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>${maven-bundle.version}</version>
+          <extensions>true</extensions>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-eclipse-plugin</artifactId>
           <version>${maven-eclipse.version}</version>
@@ -81,15 +99,19 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven-bundle.version}</version>
-          <extensions>true</extensions>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>${maven-exec.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>maven-jetty-plugin</artifactId>
+          <version>${maven-jetty.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>tomcat-maven-plugin</artifactId>
+          <version>${maven-tomcat.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
