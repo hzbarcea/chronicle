@@ -9,11 +9,15 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.example.chronicle.api.Calendars;
 import org.example.chronicle.model.Calendar;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * JAX-RS MembershipService root resource
  */
 public class CalendarsService implements Calendars {
+    private static final Logger LOG = LoggerFactory.getLogger(CalendarsService.class);
+
     private AtomicLong currentId = new AtomicLong();
     private Map<String, Calendar> calendars = new ConcurrentHashMap<String, Calendar>();
 
@@ -26,7 +30,7 @@ public class CalendarsService implements Calendars {
         c.setSummary("First Calendar");
         c.setDescription("First Calendar");
         calendars.put(c.getId(), c);
-        System.out.println("Added: " + c.getId() + " / " + c.getSummary());
+        LOG.info("Added: {} / {}", c.getId(), c.getSummary());
 
         id = Long.toHexString(currentId.incrementAndGet());
         c = new Calendar();
@@ -35,7 +39,7 @@ public class CalendarsService implements Calendars {
         c.setSummary("Second Calendar");
         c.setDescription("Second Calendar");
         calendars.put(c.getId(), c);
-        System.out.println("Added: " + c.getId() + " / " + c.getSummary());
+        LOG.info("Added: {} / {}", c.getId(), c.getSummary());
 
         id = Long.toHexString(currentId.incrementAndGet());
         c = new Calendar();
@@ -44,7 +48,7 @@ public class CalendarsService implements Calendars {
         c.setSummary("Third Calendar");
         c.setDescription("Third Calendar");
         calendars.put(c.getId(), c);
-        System.out.println("Added: " + c.getId() + " / " + c.getSummary());
+        LOG.info("Added: {} / {}", c.getId(), c.getSummary());
 
     }
 
@@ -72,8 +76,8 @@ public class CalendarsService implements Calendars {
     }
 
     public Calendar get(String calendarId) {
-        // TODO Auto-generated method stub
-        return null;
+        LOG.info("Getting calendar: {}", calendarId);
+        return calendars.get(calendarId);
     }
 
     public void insert(String calendarId) {
