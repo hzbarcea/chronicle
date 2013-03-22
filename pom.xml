@@ -114,7 +114,7 @@
     <module>api</module>
     <module>service</module>
     <module>war</module>
-    <!-- module>test</module -->
+    <module>test</module>
   </modules>
 
   <build>
