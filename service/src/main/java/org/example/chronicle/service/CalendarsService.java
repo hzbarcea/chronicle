@@ -7,6 +7,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
+import org.example.chronicle.api.Acl;
 import org.example.chronicle.api.Calendars;
 import org.example.chronicle.model.Calendar;
 import org.slf4j.Logger;
@@ -20,6 +24,7 @@ public class CalendarsService implements Calendars {
 
     private AtomicLong currentId = new AtomicLong();
     private Map<String, Calendar> calendars = new ConcurrentHashMap<String, Calendar>();
+    private Acl acl = new AclResource();
 
     public CalendarsService() {
         // seed HashMap with first calendar
@@ -88,5 +93,10 @@ public class CalendarsService implements Calendars {
     public void update(String calendarId) {
         // TODO Auto-generated method stub
         
+    }
+
+    public Acl getAcl(@PathParam("calendarId") String calendarId) {
+        LOG.info("Getting Acl for calendar: {}", calendarId);
+        return acl;
     }
 }

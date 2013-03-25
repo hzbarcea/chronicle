@@ -22,60 +22,49 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.example.chronicle.model.Calendar;
 
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
-@Path("/")
-public interface Calendars {
+@XmlRootElement(name = "book")
+public interface Acl {
 
     /*
-     * Clears a primary calendar. 
-     * This operation deletes all data associated with the primary calendar of an account and cannot be undone.
-     */
-    @POST
-    @Path("{calendarId}/clear")
-    void clear(@PathParam("calendarId") String calendarId);
-
-    /*
-     * Deletes a secondary calendar. 
+     * Deletes an access control rule.
      */
     @DELETE
-    @Path("{calendarId}")
-    void delete(@PathParam("calendarId") String calendarId);
+    @Path("{ruleId}")
+    void delete(@PathParam("ruleId") String ruleId);
 
     /*
-     * Returns metadata for a calendar. 
+     * Returns an access control rule.
      */
     @GET
-    @Path("{calendarId}")
-    Calendar get(@PathParam("calendarId") String calendarId);
-    
+    @Path("{ruleId}")
+    Object get(@PathParam("ruleId") String ruleId);
+
     /*
-     * Creates a secondary calendar. 
+     * Creates an access control rule.
      */
     @POST
-    void insert(String calendarId);
+    Object insert();
 
     /*
-     * Updates metadata for a calendar.
+     * Returns the rules in the access control list for the calendar.
+     */
+    @GET
+    Calendar list();
+
+    /*
+     * Updates an access control rule.
      */
     @PUT
-    @Path("{calendarId}")
-    void update(@PathParam("calendarId") String calendarId);
+    @Path("{ruleId}")
+    Object update(@PathParam("ruleId") String ruleId);
 
-    /*
-     * Updates metadata for a calendar. This method supports patch semantics.
-     * 
-     * Deal with the @PATCH verb later
-    @PATCH
-    @Path("/{calendarId}")
-    void patch(@PathParam("calendarId") String calendarId);
-    */
-
-    @Path("{calendarId}/acl")
-    Acl getAcl(@PathParam("calendarId") String calendarId);
-
+    // TODO: implement @Patch
 }
+

@@ -38,9 +38,9 @@ public final class RESTClient implements Runnable {
             props.load(RESTClient.class.getResourceAsStream("/client.properties"));
             port = Integer.valueOf(props.getProperty(PORT_PROPERTY));
         } catch (IOException ex) {
-            System.out.println("Resource not available: client.properties. Using defaults");
+            System.out.println("Resource not available: 'client.properties'. Using defaults");
         } catch (NumberFormatException ex) {
-            System.out.println("Invalid non-numeric value for " + PORT_PROPERTY + ". Using defaults");
+            System.out.println("Invalid non-numeric value for '" + PORT_PROPERTY + "'. Using defaults");
         }
         HTTP_PORT = port;
     }
