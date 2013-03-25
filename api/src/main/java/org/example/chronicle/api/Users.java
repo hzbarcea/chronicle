@@ -22,38 +22,16 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.xml.bind.annotation.XmlRootElement;
+
+import org.example.chronicle.model.Calendar;
 
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
-@XmlRootElement
-public interface CalendarList {
+@Path("/")
+public interface Users {
 
-    @DELETE 
-    @Path("/{calendarId}")
-    void delete(@PathParam("calendarId") String calendarId);
-
-    @GET
-    @Path("/{calendarId}")
-    void get(@PathParam("calendarId") String calendarId);
-
-    @POST
-    void insert();
-
-    @GET
-    void list();
-
-    @PUT
-    @Path("/{calendarId}")
-    void update(@PathParam("calendarId") String calendarId);
-
-    /*
-     * TODO: deal with @Patch
-    @Patch
-    @Path("/{calendarId}")
-    void patch(@PathParam("calendarId") String calendarId);
-     */
+    @Path("{userId}/calendarList")
+    CalendarList getCalendarList(@PathParam("userId") String userId);
 
 }
-

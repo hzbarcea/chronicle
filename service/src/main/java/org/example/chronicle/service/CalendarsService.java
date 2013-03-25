@@ -7,9 +7,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-
 import org.example.chronicle.api.Acl;
 import org.example.chronicle.api.Calendars;
 import org.example.chronicle.api.Events;
@@ -18,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * JAX-RS MembershipService root resource
+ * JAX-RS CalendarsService root resource
  */
 public class CalendarsService implements Calendars {
     private static final Logger LOG = LoggerFactory.getLogger(CalendarsService.class);
