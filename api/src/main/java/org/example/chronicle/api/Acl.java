@@ -29,21 +29,21 @@ import org.example.chronicle.model.Calendar;
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
-@XmlRootElement(name = "book")
+@XmlRootElement(name = "acl")
 public interface Acl {
 
     /*
      * Deletes an access control rule.
      */
     @DELETE
-    @Path("{ruleId}")
+    @Path("/{ruleId}")
     void delete(@PathParam("ruleId") String ruleId);
 
     /*
      * Returns an access control rule.
      */
     @GET
-    @Path("{ruleId}")
+    @Path("/{ruleId}")
     Object get(@PathParam("ruleId") String ruleId);
 
     /*
@@ -62,7 +62,7 @@ public interface Acl {
      * Updates an access control rule.
      */
     @PUT
-    @Path("{ruleId}")
+    @Path("/{ruleId}")
     Object update(@PathParam("ruleId") String ruleId);
 
     // TODO: implement @Patch
