@@ -16,19 +16,29 @@
  */
 package org.example.chronicle.api;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
-@Path("/")
-public interface Users {
+@XmlRootElement(name = "settings")
+public interface Settings {
 
-    @Path("{userId}/calendarList")
-    CalendarList getCalendarList(@PathParam("userId") String userId);
+    /*
+     * Returns an access control rule.
+     */
+    @GET
+    @Path("/{setting}")
+    Object get(@PathParam("setting") String setting);
 
-    @Path("{userId}/settings")
-    Settings getSettings(@PathParam("userId") String userId);
+    /*
+     * Returns an access control rule.
+     */
+    @GET
+    Object list();
 
 }
+
