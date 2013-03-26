@@ -30,8 +30,8 @@ import org.example.chronicle.model.Calendar;
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
-//@Produces({"application/json"})
-//@Consumes({"application/json"})
+@Produces({"application/json"})
+@Consumes({"application/json"})
 @Path("/")
 public interface Calendars {
 
