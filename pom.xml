@@ -33,6 +33,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <cxf.version>2.7.3</cxf.version>
+    <jackson.version>2.1.4</jackson.version>
     <spring.version>3.0.7.RELEASE</spring.version>
     <wsdl4j.version>1.6.2</wsdl4j.version>
 
@@ -70,6 +71,27 @@
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-rt-rs-security-oauth2</artifactId>
         <version>${cxf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.jaxrs</groupId>
+        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <version>${jackson.version}</version>
       </dependency>
       <dependency>
         <groupId>wsdl4j</groupId>

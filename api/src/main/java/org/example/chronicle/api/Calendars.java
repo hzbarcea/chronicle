@@ -16,18 +16,22 @@
  */
 package org.example.chronicle.api;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
 import org.example.chronicle.model.Calendar;
 
 /*
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
+//@Produces({"application/json"})
+//@Consumes({"application/json"})
 @Path("/")
 public interface Calendars {
 

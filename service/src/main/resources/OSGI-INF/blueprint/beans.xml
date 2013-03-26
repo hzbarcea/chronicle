@@ -35,5 +35,6 @@
       <ref bean="freebusyService"/>
     </jaxrs:serviceBeans>
   </jaxrs:server>
+
 </beans>
 
