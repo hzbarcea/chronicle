@@ -28,9 +28,22 @@
   <import resource="classpath:META-INF/cxf/cxf.xml" />
 
   <jaxrs:server id="calendarsService" address="/calendars">
+    <jaxrs:inInterceptors>
+        <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+    </jaxrs:inInterceptors>
+    <jaxrs:outInterceptors>
+        <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+    </jaxrs:outInterceptors>
     <jaxrs:serviceBeans>
       <ref bean="calendarsBean" />
     </jaxrs:serviceBeans>
+    <jaxrs:providers>
+      <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+        <property name="annotationsToUse">
+          <value>JAXB</value>
+        </property>
+      </bean>
+    </jaxrs:providers>
   </jaxrs:server>
 
   <bean id="calendarsBean" class="org.example.chronicle.service.CalendarsService" />
