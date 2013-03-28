@@ -21,7 +21,7 @@ import java.util.Properties;
 
 import org.apache.cxf.jaxrs.client.WebClient;
 
-import org.example.chronicle.api.Acl;
+import org.example.chronicle.api.Acls;
 import org.example.chronicle.model.Calendar;
 
 
@@ -72,7 +72,7 @@ public final class RESTClient implements Runnable {
         System.out.println("Calendar ID/Summary = " + c.getId() + " / " + c.getSummary());
 
         wc.path("acl/12345");
-        Acl acl = wc.get(Acl.class);
+        Acls acl = wc.get(Acls.class);
         return c;
     }
 

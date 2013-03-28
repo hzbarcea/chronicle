@@ -80,7 +80,7 @@ public interface Calendars {
     */
 
     @Path("{calendarId}/acl")
-    Acl getAcl(@PathParam("calendarId") String calendarId);
+    Acls getAcl(@PathParam("calendarId") String calendarId);
 
     @Path("{calendarId}/events")
     Events getEvents(@PathParam("calendarId") String calendarId);

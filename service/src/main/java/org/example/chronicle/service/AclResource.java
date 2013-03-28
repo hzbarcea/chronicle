@@ -14,7 +14,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import org.example.chronicle.api.Acl;
+import org.example.chronicle.api.Acls;
 import org.example.chronicle.api.Calendars;
 import org.example.chronicle.model.Calendar;
 import org.slf4j.Logger;
@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 /**
  * JAX-RS MembershipService root resource
  */
-public class AclResource implements Acl {
+public class AclResource implements Acls {
     private static final Logger LOG = LoggerFactory.getLogger(AclResource.class);
 
     public void delete(String ruleId) {

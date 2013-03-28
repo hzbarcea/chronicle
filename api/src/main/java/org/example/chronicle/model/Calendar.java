@@ -6,6 +6,7 @@ package org.example.chronicle.model;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.EntityTag;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -13,8 +14,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "calendar")
 public class Calendar {
+
     private String kind;
-    private String etag;
+    private EntityTag etag;
     private String id;
     private String summary;
     private String description;
@@ -29,10 +31,10 @@ public class Calendar {
     }
 
     public String getEtag() {
-        return etag;
+        return etag.getValue();
     }
     public void setEtag(String etag) {
-        this.etag = etag;
+        this.etag = new EntityTag(etag);
     }
 
     public String getId() {

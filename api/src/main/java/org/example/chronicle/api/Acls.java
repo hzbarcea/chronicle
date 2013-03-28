@@ -30,7 +30,7 @@ import org.example.chronicle.model.Calendar;
  * See https://developers.google.com/google-apps/calendar/v3/reference/
  */
 @XmlRootElement(name = "acl")
-public interface Acl {
+public interface Acls {
 
     /*
      * Deletes an access control rule.

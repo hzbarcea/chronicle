@@ -16,17 +16,43 @@
  */
 package org.example.chronicle.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
-public final class Constants {
 
-    public static final String KIND_PREFIX = "calendar#";
-    public static final String KIND_ACLRULE = KIND_PREFIX + "aclRule";
-    public static final String KIND_FREEBUSY = KIND_PREFIX + "freeBusy";
+@XmlRootElement
+public class User {
 
-    public static final String SCOPE_TYPE_DEFAULT = "default";  // The public scope. This is the default value.
-    public static final String SCOPE_TYPE_USER = "user";        // Limits the scope to a single user.
-    public static final String SCOPE_TYPE_GROUP = "group";      // Limits the scope to a group.
-    public static final String SCOPE_TYPE_DOMAIN = "domain";    // Limits the scope to a domain.
+    private String id;
+    private String email;
+    private String displayName;
+    private boolean self;
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public boolean isSelf() {
+        return self;
+    }
+    public void setSelf(boolean self) {
+        this.self = self;
+    }
 
 }
-

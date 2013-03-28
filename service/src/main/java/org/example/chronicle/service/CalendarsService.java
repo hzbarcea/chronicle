@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.example.chronicle.api.Acl;
+import org.example.chronicle.api.Acls;
 import org.example.chronicle.api.Calendars;
 import org.example.chronicle.api.Events;
 import org.example.chronicle.model.Calendar;
@@ -22,7 +22,7 @@ public class CalendarsService implements Calendars {
 
     private AtomicLong currentId = new AtomicLong();
     private Map<String, Calendar> calendars = new ConcurrentHashMap<String, Calendar>();
-    private Acl acl = new AclResource();
+    private Acls acl = new AclResource();
     private Events events = new EventsResource();
 
     public CalendarsService() {
@@ -94,7 +94,7 @@ public class CalendarsService implements Calendars {
         
     }
 
-    public Acl getAcl(String calendarId) {
+    public Acls getAcl(String calendarId) {
         LOG.info("Getting Acl for calendar: {}", calendarId);
         return acl;
     }
