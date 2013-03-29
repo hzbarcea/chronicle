@@ -16,20 +16,18 @@
  */
 package org.example.chronicle.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ws.rs.core.EntityTag;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement
-public class Acl {
+public class AclRule {
 
-    private String kind = Constants.KIND_ACL;
+    private String kind = Constants.KIND_ACLRULE;
     private EntityTag etag;
-    private String nextPageToken;
-    private List<AclRule> items = new ArrayList<AclRule>();
+    private String id;
+    private Scope scope;
+    private String role;
 
     public String getKind() {
         return kind;
@@ -42,15 +40,25 @@ public class Acl {
         this.etag = new EntityTag(etag);
     }
 
-    public String getNextPageToken() {
-        return nextPageToken;
+    public String getId() {
+        return id;
     }
-    public void setNextPageToken(String nextPageToken) {
-        this.nextPageToken = nextPageToken;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public List<AclRule> getItems() {
-        return items;
+    public Scope getScope() {
+        return scope;
+    }
+    public void setScope(Scope scope) {
+        this.scope = scope;
+    }
+
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
     }
 
 }

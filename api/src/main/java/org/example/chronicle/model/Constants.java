@@ -20,13 +20,20 @@ package org.example.chronicle.model;
 public final class Constants {
 
     public static final String KIND_PREFIX = "calendar#";
+    public static final String KIND_ACL = KIND_PREFIX + "acl";
     public static final String KIND_ACLRULE = KIND_PREFIX + "aclRule";
     public static final String KIND_FREEBUSY = KIND_PREFIX + "freeBusy";
 
-    public static final String SCOPE_TYPE_DEFAULT = "default";  // The public scope. This is the default value.
-    public static final String SCOPE_TYPE_USER = "user";        // Limits the scope to a single user.
-    public static final String SCOPE_TYPE_GROUP = "group";      // Limits the scope to a group.
-    public static final String SCOPE_TYPE_DOMAIN = "domain";    // Limits the scope to a domain.
+    public static final String SCOPE_TYPE_DEFAULT = "default";
+    public static final String SCOPE_TYPE_USER = "user";
+    public static final String SCOPE_TYPE_GROUP = "group";
+    public static final String SCOPE_TYPE_DOMAIN = "domain";
+
+    public static final String ROLE_NONE = "none";
+    public static final String ROLE_FREEBUSY_READER = "freeBusyReader";
+    public static final String ROLE_READER = "reader";
+    public static final String ROLE_WRITER = "writer";
+    public static final String ROLE_OWNER = "owner";
 
 }
 
