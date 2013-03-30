@@ -22,6 +22,8 @@ public final class Constants {
     public static final String KIND_PREFIX = "calendar#";
     public static final String KIND_ACL = KIND_PREFIX + "acl";
     public static final String KIND_ACLRULE = KIND_PREFIX + "aclRule";
+    public static final String KIND_CALENDARLIST = KIND_PREFIX + "calendarList";
+    public static final String KIND_CALENDARLIST_ENTRY = KIND_PREFIX + "calendarListEntry";
     public static final String KIND_FREEBUSY = KIND_PREFIX + "freeBusy";
 
     public static final String SCOPE_TYPE_DEFAULT = "default";
